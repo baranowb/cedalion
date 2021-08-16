@@ -61,7 +61,7 @@ pipeline {
                 }
 
                 dir('harmonia') {
-                  git branch: 'olympus', url: 'https://github.com/jboss-set/harmonia.git'
+                  git branch: 'set_383', url: 'https://github.com/baranowb/harmonia.git'
                 }
 
                 script {

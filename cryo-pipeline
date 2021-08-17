@@ -37,7 +37,7 @@ pipeline {
                   git branch: 'different_netrc_file', url: 'https://github.com/gaol/auxilia.git'
                 }
                 dir('harmonia') {
-                  git branch: 'cryo', url: 'https://github.com/gaol/harmonia.git'
+                  git branch: 'set_383', url: 'https://github.com/baranowb/harmonia.git'
                 }
 
                 script {

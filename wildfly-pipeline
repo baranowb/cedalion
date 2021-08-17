@@ -63,6 +63,10 @@ pipeline {
                 dir('harmonia') {
                   git branch: 'set_383', url: 'https://github.com/baranowb/harmonia.git'
                 }
+                
+                dir('auxilia') {
+                  git branch: 'different_netrc_file', url: 'https://github.com/gaol/auxilia.git'
+                }
 
                 script {
                     if ( env.RERUN_FAILING_TESTS == null || "".equals("${env.RERUN_FAILING_TESTS}") ) {

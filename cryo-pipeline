@@ -34,7 +34,7 @@ pipeline {
                   git 'https://github.com/jboss-set/hera.git'
                 }
                 dir('auxilia') {
-                  git branch: 'different_netrc_file', url: 'https://github.com/gaol/auxilia.git'
+                  git branch: 'set_383', url: 'https://github.com/baranowb/auxilia.git'
                 }
                 dir('harmonia') {
                   git branch: 'set_383', url: 'https://github.com/baranowb/harmonia.git'

@@ -48,3 +48,10 @@ new eap7.Builder(branch:'main',
                  javaHome: "/opt/oracle/openjdk-11.0.14.1_1"
                 ).buildAndTest(this)
 EapView.jobList(this, 'wildfly', 'wildfly.*')
+
+new eap7.Builder(branch:'18.0.x',
+                 jobName: 'vbe-wildfly-core-eap',
+                 gitRepositoryUrl: "git@github.com:jbossas/wildfly-core-eap.git",
+                 javaHome: "/opt/oracle/openjdk-11.0.14.1_1"
+                ).buildAndTest(this)
+EapView.jobList(this, 'vbe-wildfly', 'vbe-wildfly-core.*')

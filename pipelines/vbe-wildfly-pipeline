@@ -66,11 +66,11 @@ pipeline {
                       branch: "${env.GIT_REPOSITORY_BRANCH}"
                 }
                 dir('hera') {
-                  git url: 'https://github.com/jboss-set/hera.git', poll: false, changelog: false
+                  git branch: 'EAP8_TMP', url: 'https://github.com/baranowb/hera.git', poll: false, changelog: false
                 }
 
                 dir('harmonia') {
-                  git branch: 'olympus', url: 'https://github.com/jboss-set/harmonia.git', poll: false, changelog: false
+                  git branch: 'EAP8_TMP', url: 'https://github.com/baranowb/harmonia.git', poll: false, changelog: false
                 }
 
                 script {
@@ -86,6 +86,12 @@ pipeline {
                             assert lastSuccessfulBuildId.isNumber()
                             env.PARENT_JOB_BUILD_ID = "${lastSuccessfulBuildId}"
                             env.PARENT_JOB_NAME = "${parent_jobname}"
+                            if( !"${env.JOB_NAME}".contains("core") ) {
+                            	def parent_core_jobname = "vbe-wildfly-core-eap-build"
+                            	def wfcoreLastSuccessfulBuildId = lookupLastSuccessfulBuildId(parent_core_jobname)
+                            	env.PARENT_CORE_JOB_BUILD_ID = "${wfcoreLastSuccessfulBuildId}"
+                                env.PARENT_CORE_JOB_NAME = "${parent_core_jobname}"
+                            }
                         } else if ( "${env.JOB_NAME}".endsWith("testsuite") ) {
                             if ( "${env.BUILD_COMMAND}".startsWith("testsuite") ) {
 	                        def parent_jobname = ""

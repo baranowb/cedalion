@@ -1,5 +1,5 @@
 //new vbe.Builder(branch: '7.4.x', javaHome: "/opt/oracle/openjdk-11.0.14.1_1").buildAndTest(this)
-new vbe.Builder(jobName: "vbe-eap-tmp-8.0.0.dev", branch: '8.0.0.dev', javaHome: "/opt/oracle/openjdk-11.0.14.1_1", gitRepositoryUrl: 'git@github.com:jbossas/jboss-eap8.git',vbeRepositoryNames: 'jboss-eap-8.0-product-repository', vbeChannels: "${VPE_EAP_8_CHANNEL}").buildAndTest(this)
+new vbe.Builder(jobName: "vbe-eap-tmp-8.0.0.Beta", branch: '8.0.0.Beta', javaHome: "/opt/oracle/openjdk-11.0.14.1_1", gitRepositoryUrl: 'git@github.com:jbossas/jboss-eap8.git',vbeRepositoryNames: 'jboss-eap-8.0-product-repository', vbeChannels: "${VPE_EAP_8_CHANNEL}").buildAndTest(this)
 //WFCORE for eap8... needs hacks...
 new eap7.Builder(branch:'18.0.x',
                  jobName: 'vbe-wildfly-core-eap',
